@@ -18,6 +18,11 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
 
 # language support # en / zh-cn / other... translations present in i18n/
 defaultContentLanguage = "en"           # Default language to use
+pygmentsCodeFences = true
+pygmentsUseClasses = true
+pygmentsCodefencesGuessSyntax = true
+pygmentsOptions = 'linenos=table'
+
 [languages.en]
   languageCode = "en"
 
@@ -69,7 +74,7 @@ defaultContentLanguage = "en"           # Default language to use
   logoTitle = "山羊的部落格"        # default: the title value    # 默认值: 上面设置的title值
   keywords = ["Hugo"]
   description = "Hugo theme jane example site."
-  
+
   # The date format to use; for a list of valid formats, see https://gohugo.io/functions/format/
   dateFormatToUse = "2006-01-02"
 
@@ -79,7 +84,6 @@ defaultContentLanguage = "en"           # Default language to use
   photoswipe = true         # see https://github.com/dimsemenov/PhotoSwipe            # 是否启用PhotoSwipe（图片可点击）
   mathjax = true
   contentCopyright = '原創文章，如需轉載請註明文章作者和出處。謝謝！'
-
   # Link custom CSS and JS assets
   #   (relative to /static/css and /static/js respectively)
   customCSS = []            # if ['custom.css'], load '/static/css/custom.css' file
