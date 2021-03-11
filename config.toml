@@ -91,7 +91,7 @@ pygmentsOptions = 'linenos=table'
 
   [params.social]                                         # 社交链接
     a-email = "mailto:93wilsonlu@gmail.com"
-    b-facebook = "https://www.facebook.com/93wilisonlu"
+    b-facebook = "https://www.facebook.com/93wilsonlu"
     c-github = "https://github.com/93wilsonlu"
 
 [markup.goldmark.renderer]
