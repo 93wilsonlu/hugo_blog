@@ -1,5 +1,5 @@
 ---
-title: "picoCTF2020-Guessing-Game-1"
+title: "picoCTF2020 Guessing Game 1"
 date: 2020-10-14
 draft: false
 tags: ["picoCTF", "CTF", "pwn"]
