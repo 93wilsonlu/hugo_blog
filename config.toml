@@ -86,7 +86,7 @@ pygmentsOptions = 'linenos=table'
   contentCopyright = '原創文章，如需轉載請註明文章作者和出處。謝謝！'
   # Link custom CSS and JS assets
   #   (relative to /static/css and /static/js respectively)
-  customCSS = []            # if ['custom.css'], load '/static/css/custom.css' file
+  customCSS = ['mathjax.css']            # if ['custom.css'], load '/static/css/custom.css' file
   customJS = []             # if ['custom.js'], load '/static/js/custom.js' file
 
   [params.social]                                         # 社交链接

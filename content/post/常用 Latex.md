@@ -12,8 +12,14 @@ categories: ["Markdown"]
 放上一個範例
 
 $$
-v=v_0+at\\\
-x=x_0+v_0t+\dfrac{1}{2}at^2 \\\
+v=v_0+at
+$$
+
+$$
+x=x_0+v_0t+\dfrac{1}{2}at^2
+$$
+
+$$
 v^2=v_0^2+2a(x-x_0)
 $$
 
