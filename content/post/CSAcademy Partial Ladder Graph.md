@@ -5,6 +5,7 @@ draft: false
 tags: ["CSAcademy", "DP"]
 categories: ["CSAcademy"]
 ---
+<!--more-->
 
 # 題目
 給定數字 $$N$$，組成像這樣的圖共有 $$2N$$ 個節點

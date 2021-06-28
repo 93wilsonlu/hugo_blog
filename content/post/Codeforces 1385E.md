@@ -5,6 +5,7 @@ draft: false
 tags: ["Codeforces", "Topical Sort"]
 categories: ["Codeforces"]
 ---
+<!--more-->
 
 給定一個有向和無向邊的圖，將無向邊定向並避免產生環，最後輸出圖。
 

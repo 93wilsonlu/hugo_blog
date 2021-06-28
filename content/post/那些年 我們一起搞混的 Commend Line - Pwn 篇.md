@@ -5,6 +5,7 @@ draft: true
 tags: ["Commend Line", "Pwn", "CTF"]
 categories: ["Pwn"]
 ---
+<!--more-->
 
 objdump
 readelf

@@ -5,6 +5,7 @@ draft: false
 tags: ["Atcoder", "BFS"]
 categories: ["Atcoder"]
 ---
+<!--more-->
 
 # 題目
 有一張圖，每個邊上有一字元，求 1 到 N 的最短路徑，邊組成的字串必須是回文。

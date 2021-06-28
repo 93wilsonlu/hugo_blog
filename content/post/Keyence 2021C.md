@@ -5,6 +5,7 @@ draft: false
 tags: ["Atcoder", "DP"]
 categories: ["Atcoder"]
 ---
+<!--more-->
 
 # 題目
 給定 $$H\times W$$ 表格，每個格子可放字元 `R`,`D`,`X`。<br>

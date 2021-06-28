@@ -5,6 +5,7 @@ draft: false
 tags: ["CTF", "AIS3 Pre-Exam"]
 categories: ["AIS3 Pre-Exam"]
 ---
+<!--more-->
 
 ## Cat Slayer ᶠᵃᵏᵉ | Nekogoroshi
 打密碼，一旦打錯就會 Lock 掉。
