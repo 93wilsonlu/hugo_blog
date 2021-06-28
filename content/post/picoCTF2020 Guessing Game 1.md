@@ -1,9 +1,9 @@
 ---
-title: "picoCTF2020 Guessing Game 1"
+title: "PicoCTF2020 Guessing Game 1"
 date: 2020-10-14
 draft: false
-tags: ["picoCTF", "CTF", "pwn"]
-categories: ["picoCTF"]
+tags: ["PicoCTF", "CTF", "Pwn"]
+categories: ["PicoCTF"]
 ---
 
 這題目花了我好幾個小時

@@ -2,7 +2,7 @@
 title: "Codeforces 1385E"
 date: 2021-06-09
 draft: false
-tags: ["C++", "Codeforces", "Topical Sort"]
+tags: ["Codeforces", "Topical Sort"]
 categories: ["Codeforces"]
 ---
 

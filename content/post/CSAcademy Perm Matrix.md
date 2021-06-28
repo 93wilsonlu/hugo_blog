@@ -2,7 +2,7 @@
 title: "CSAcademy Perm Matrix"
 date: 2021-06-21
 draft: false
-tags: ["C++", "CSAcademy", "Greedy"]
+tags: ["CSAcademy", "Greedy"]
 categories: ["CSAcademy"]
 ---
 

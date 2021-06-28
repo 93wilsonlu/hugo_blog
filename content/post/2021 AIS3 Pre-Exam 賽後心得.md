@@ -2,8 +2,8 @@
 title: 2021 AIS3 Pre-Exam 賽後心得
 date: 2021-05-24
 draft: false
-tags: ["CTF", "AIS3"]
-categories: ["CTF"]
+tags: ["CTF", "AIS3 Pre-Exam"]
+categories: ["AIS3 Pre-Exam"]
 ---
 
 ## Cat Slayer ᶠᵃᵏᵉ | Nekogoroshi

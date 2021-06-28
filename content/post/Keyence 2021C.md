@@ -2,8 +2,8 @@
 title: "Keyence 2021C"
 date: 2021-06-28
 draft: false
-tags: ["C++", "Atcoder", "DP"]
-categories: ["C++"]
+tags: ["Atcoder", "DP"]
+categories: ["Atcoder"]
 ---
 
 # 題目
