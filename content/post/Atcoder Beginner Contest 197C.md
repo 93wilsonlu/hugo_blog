@@ -1,5 +1,5 @@
 ---
-title: "Atcoder ABC 197F"
+title: "Atcoder Beginner Contest 197F"
 date: 2021-06-28
 draft: false
 tags: ["Atcoder", "BFS"]
