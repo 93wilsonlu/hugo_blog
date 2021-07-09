@@ -2,6 +2,7 @@
 title: "Codeforces 1542C"
 date: 2021-07-04T00:03:20+08:00
 draft: false
+markup: mmark
 ---
 <!--more-->
 

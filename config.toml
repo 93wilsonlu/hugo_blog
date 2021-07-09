@@ -83,10 +83,11 @@ pygmentsOptions = 'linenos=table'
   toc = false # 是否开启目录
   photoswipe = true         # see https://github.com/dimsemenov/PhotoSwipe            # 是否启用PhotoSwipe（图片可点击）
   mathjax = true
+  
   contentCopyright = '原創文章，如需轉載請註明文章作者和出處。謝謝！'
   # Link custom CSS and JS assets
   #   (relative to /static/css and /static/js respectively)
-  customCSS = ['mathjax.css']            # if ['custom.css'], load '/static/css/custom.css' file
+  customCSS = []            # if ['custom.css'], load '/static/css/custom.css' file
   customJS = []             # if ['custom.js'], load '/static/js/custom.js' file
 
   [params.social]                                         # 社交链接
@@ -95,4 +96,4 @@ pygmentsOptions = 'linenos=table'
     c-github = "https://github.com/93wilsonlu"
 
 [markup.goldmark.renderer]
-unsafe= true
+  unsafe = true

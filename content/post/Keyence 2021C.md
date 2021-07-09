@@ -4,6 +4,7 @@ date: 2021-06-28
 draft: false
 tags: ["Atcoder", "DP"]
 categories: ["Atcoder"]
+markup: mmark
 ---
 <!--more-->
 
