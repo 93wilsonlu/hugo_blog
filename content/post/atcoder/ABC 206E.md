@@ -3,6 +3,8 @@ title: "Atcoder Beginner Contest 206E"
 date: 2021-07-02T23:25:22+08:00
 draft: false
 markup: mmark
+tags: ["Atcoder", "數學", "排容原理"]
+categories: ["Atcoder"]
 ---
 <!--more-->
 
